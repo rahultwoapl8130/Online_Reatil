@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+kmeans_model = joblib.load("kmeans_model.pkl")
+scaler = joblib.load("scaler.pkl")
+sim_df = joblib.load("product_similarity.pkl")
 # ===========================================
 # Load saved files (run your notebook pipeline first
 # so these files exist in the same folder as this app)
