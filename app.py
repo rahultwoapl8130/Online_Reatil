@@ -41,13 +41,13 @@ with tab1:
     product = st.text_input("Enter a product name (exact match from dataset)")
 
     if st.button("Get Recommendations"):
-        if product in sim_df.columns:
-            top5 = sim_df[product].sort_values(ascending=False)[1:6]
-            st.success(f"Top 5 products similar to **{product}**:")
-            for name, score in top5.items():
-                st.write(f"- **{name}** (Similarity: {score:.2f})")
+      if product in sim_df:
+            st.success(f"Top products similar to **{product}**:")
+            recommendations = sim_df[product]
+            for idx, (name, score) in enumerate(recommendations.items(), 1):
+                st.write(f"{idx}. **{name}** (Similarity Match Score: {score:.2f})")
         else:
-            st.error("Product not found. Check the exact spelling from the dataset.")
+            st.error("Product name not found in the dataset. Please check your spelling and try again!")
 # ===========================================
 # TAB 2 — Customer Segmentation
 # ===========================================
