@@ -41,7 +41,8 @@ with tab1:
     product = st.text_input("Enter a product name (exact match from dataset)")
 
     if st.button("Get Recommendations"):
-      if product in sim_df:
+        # Dictionary-safe lookup with fixed vertical indentation alignment
+        if product in sim_df:
             st.success(f"Top products similar to **{product}**:")
             recommendations = sim_df[product]
             for idx, (name, score) in enumerate(recommendations.items(), 1):
