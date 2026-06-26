@@ -9,9 +9,6 @@ sim_df = joblib.load("product_similarity.pkl")
 # Load saved files (run your notebook pipeline first
 # so these files exist in the same folder as this app)
 # ===========================================
-kmeans_model = joblib.load("kmeans_model.pkl")
-scaler = joblib.load("scaler.pkl")
-sim_df = pd.read_pickle("product_similarity.pkl")
 
 # Confirmed mapping from your cluster profiling
 cluster_map = {
