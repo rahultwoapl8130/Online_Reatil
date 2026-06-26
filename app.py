@@ -45,10 +45,9 @@ with tab1:
             top5 = sim_df[product].sort_values(ascending=False)[1:6]
             st.success(f"Top 5 products similar to **{product}**:")
             for name, score in top5.items():
-                st.write(f"- **{name}**  (similarity: {score:.2f})")
+                st.write(f"- **{name}** (Similarity: {score:.2f})")
         else:
             st.error("Product not found. Check the exact spelling from the dataset.")
-
 # ===========================================
 # TAB 2 — Customer Segmentation
 # ===========================================
